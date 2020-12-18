@@ -1,0 +1,24 @@
+{
+  "name": "chatapp-node",
+  "version": "0.1.0",
+  "description": "A simple chat app to play around with node stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "mongodb",
+    "mongoose",
+    "chatbot"
+  ],
+  "author": "colinfendrick",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.15.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
