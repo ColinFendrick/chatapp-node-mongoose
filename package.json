@@ -4,7 +4,7 @@
   "description": "A simple chat app to play around with node stuff",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./index.js"
   },
   "keywords": [
     "node",
