@@ -11,8 +11,10 @@ $(document).ready(() => {
 		getMessages();
 	});
 
-	const getMessages = () =>
+	const getMessages = () =>{
+		$('#messages').empty();
 		$.get('http://localhost:3001/messages', data => data.forEach(addMessage));
+	};
 
 	const addMessage = message =>
 		$('#messages').append(`
@@ -21,5 +23,5 @@ $(document).ready(() => {
 		`);
 
 	const sendMessage = message =>
-		$.post('http://localhost:3001/messages', message);
+		$.post('http://localhost:3001/messages', message, getMessages);
 });
