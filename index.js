@@ -1,16 +1,12 @@
 require('./db/db');
 
-const express = require('express');
-const bodyParser = require('body-parser');
+const { express, app, http, io } = require('./main.module');
 const messageRouter = require('./routers/message');
-
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 3001;
-
-const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(express.static(__dirname));
 
 app.use((req, res, next) => {
@@ -22,6 +18,10 @@ app.use((req, res, next) => {
 
 app.use(messageRouter);
 
-app.listen(port, () => {
+io.on('connection', () => {
+	console.log('a user is connected');
+});
+
+http.listen(port, () => {
 	console.log(`Server is up on port ${port}`);
 });

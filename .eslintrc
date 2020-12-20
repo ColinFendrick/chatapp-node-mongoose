@@ -14,6 +14,10 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
+
+  "globals": {
+    "io": "readonly"
+  },
   "rules": {
     "indent": [
       "warn",
