@@ -21,6 +21,16 @@ router.post('/messages', async (req, res) => {
 	} catch (e) {
 		res.status(500).send(e);
 	}
+
+	router.delete('/messages/:id', async (req, res) => {
+		try {
+			const message = await Message.findOneAndDelete({ _id: req.params._id });
+			if (!message) res.status(400).send({ message: 'Malformed data' });
+			res.send(message);
+		} catch (e) {
+			res.status(500).send(e);
+		}
+	});
 });
 
 module.exports = router;
